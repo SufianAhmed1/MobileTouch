@@ -369,10 +369,18 @@
                               <div class="sidebar-title">
                                  Categories
                               </div>
-                              <div class="sidebar-content">
-                                 <ul class="ul1">
-                                   
-                              </div>
+                               <div class="sidebar-content">
+            <ul class="ul1">
+               <?php
+              $categry=\App\Category::all();
+                ?>
+
+
+    @foreach($categry as $cats)
+              <li><a href="{{url('/flex')}}/<?php echo "$cats->id" ?>"><?php echo "{$cats->name}"?></a></li>
+              @endforeach
+            </ul>
+          </div>
                            </div>
                            <div class="sidebar-block">
                               <div class="sidebar-title">
@@ -468,7 +476,7 @@
                                        <div class="product">
                                           <div class="product-inner">
                                              <figure class="product-media">
-                                                <a href="#" class="product-view"><img src="{{asset('flextop/images/appleiphoneX.jpg')}}" alt="" class="img-responsive"></a>
+                                              <a href="{{route('next',['id' => $post->id])}}"><img src="{{asset('flextop/images/appleiphoneX.jpg')}}" alt="" class="img-responsive"></a>
                                                 <div class="product-links">
                                                    <a href="#"><i class="fa fa-heart-o"></i></a>
                                                    <a href="#"><i class="fa fa-bar-chart"></i></a>
@@ -485,13 +493,15 @@
                                                 </div>
                                                 <div class="product-prices clearfix">
                                                   
-                                                  
-
+                                                   <div class="product-review clearfix">
+                                                      {{$post->model_name}}
+                                                        </div>
+   
                                                     
                                                    <div class="product-price-old"></div>
-                                                  
+                                                  {{$post->price}}
                                                 </div>
-                                                <button  type="button"><a href="{{route('next',['id' => $post->id])}}">Detail</a></button>
+                                                <a href="{{url('/cart/add/')}}/{{$post->id}}"><button  type="button">Add to Cart</button></a>
                                              
                                             </div>
                                           </div>

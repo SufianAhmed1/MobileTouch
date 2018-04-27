@@ -11,93 +11,61 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 
 
 Route::get('/AddCategory', function () {
-    return view('AddCategory');
+return view('AddCategory');
 });
-
 Route::get('/AddBrand', function () {
-    return view('AddBrand');
+return view('AddBrand');
 });
-
-
-Route::get('/AddModel', function () {
-    
-
-    return view('AddModel');
+Route::get('/addproduct', function ()
+{
+return view('AddProduct');
 });
-
-Route::get('/addproduct', function () {
-    
-
-    return view('AddProduct');
-});
-
-
-Route::get('/home', function () {
-    return view('layouts.home');
-});
-
-
-
-
-Route::get('/check', function () {
-    return view('check');
-});
-
-
 Route::get('/main/{id}', 'HomeController@showProductsWithCategory');
-
 
 Route::post('/AddCategory','HomeController@addcategory');
 
 Route::post('/AddBrand','HomeController@addbrand');
 
-Route::post('/addmodel','HomeController@addmodel');
-
 Route::get('/show','HomeController@show');
 
+Route::get('/add','FlexController@add');
 
-
-
-
+Route::get('/addflex','FlexController@addflex');
 
 Route::get('cart','CartController@index');
-
-
-Route::get('total',function(){
-
-      return  Cart::total();
-});
-
-
 
 Route::get('cart/remove/{id}','CartController@removeitem');
 
 Route::get('cart/add/{id}','CartController@additem');
 
 Route::get('remove',function(){
-                 $rowId = '0f6524cc3c576d484150599b3682251c';
 
-                Cart::remove($rowId);
+$rowId = '0f6524cc3c576d484150599b3682251c';
+
+Cart::remove($rowId);
 });
 
 
-Route::get('ShopingCart',function(){
-      
-      return view('Shopping_Cart');
 
-});
-
-// 	return view('message');
-// });
 Route::get('/getSubCategory/', 'HomeController@index');
 
-Route::get('/getmodel/', 'HomeController@model');
 
 Route::post('/addproduct','HomeController@addproduct');
+
+
+
+
+Route::get('/flex', 'FlexController@index');
+
+Route::get('/flex/{id}', 'FlexController@index');
+Route::get('next/{id}', 'FlexController@next')->name('next');
+Route::get('insert', 'FlexController@insert');
+Route::get('/file', 'FlexController@file');
+Route::post('/File', 'FlexController@File')->name('File');
+Route::post('/addproduct', 'FlexController@addproduct');
+
+Route::post('/getSubCategory/', 'FlexController@indexb');
+Route::get('/addproduct', 'FlexController@add');

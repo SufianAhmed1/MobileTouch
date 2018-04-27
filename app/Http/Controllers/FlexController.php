@@ -49,6 +49,12 @@ public function insert()
         return view('addproduct');
         
    }
+ public function addflex()
+    {
+
+        return view('flex');
+        
+   }
 
 public function File(Request $request)
 	{
@@ -58,6 +64,7 @@ public function File(Request $request)
 		$data->details="sdasdad";
 		$data->price="sdasdad";
 		$data->model="sdasdad";
+
 		$data->cat_id=1;
 
 
@@ -117,7 +124,7 @@ public function File(Request $request)
                      $product->model_name=$request->input('model_name');
                      $product->price=$request->input('price');
                      $product->details=$request->input('details');
-                     $product->dimensions=$request->input('dimensions');
+                     $product->dimensions="ijoimk";
                      $product->weight=$request->input('weight');
                      $product->OS=$request->input('OS');
 
