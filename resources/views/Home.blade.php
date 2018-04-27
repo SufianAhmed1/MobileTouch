@@ -1,7 +1,7 @@
 
 
 
-@extends('layouts.home')
+@extends('layouts.newmobileapp')
 
 
 
@@ -161,7 +161,6 @@
                     <div class="product-caption">
                       <div class="product-name"><a href="product-details.html">{{$book->product_name}} </a></div>
                       <div class="product-review clearfix">
-                        {{$book->model_name}}
                       </div>
                       <div class="product-prices clearfix">
                         <div class="product-price"> {{$book->price}}</div>
@@ -169,8 +168,11 @@
                       </div>
                       <div class="product-add-to-cart " style="width: 80px ; " ><a href="{{url('/cart/add/')}}/{{$book->id}}">Add to Cart</a></div>
                     </div>
+                    <a href="{{route('next',['id' => $book->id])}}">{{$book->model_name}}</a>
                   </div>
                 </div>
+
+                        
               </div>
 @endforeach
              

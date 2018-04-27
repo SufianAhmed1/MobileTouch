@@ -1127,8 +1127,10 @@ img {
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
   display: block;
-  max-width: 100%;
+  max-width: 85%;
   height: auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 .img-rounded {
   border-radius: 6px;
@@ -4208,6 +4210,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     display: block !important;
     height: auto !important;
     padding-bottom: 0;
+    padding-top: 1px;
     overflow: visible !important;
   }
   .navbar-collapse.in {

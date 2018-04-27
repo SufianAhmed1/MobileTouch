@@ -69,3 +69,6 @@ Route::post('/addproduct', 'FlexController@addproduct');
 
 Route::post('/getSubCategory/', 'FlexController@indexb');
 Route::get('/addproduct', 'FlexController@add');
+
+
+Route::get('/mobilelist', 'MobileController@index');
