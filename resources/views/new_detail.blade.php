@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -34,7 +33,8 @@
         <div id="DIV_61">
         </div>
         <div id="DIV_62">
-          <img src="file:///C:/xampp/htdocs/ecommerce/public/flextop/images/AppleiPhoneX.gif" alt="Samsung Galaxy S9" id="IMG_63" />
+          <img src= "{{asset('images') . '/'.$data->image}}" height="350" width="400" >
+          <!-- <img src="<?php echo public_path() . '/images/' . $data->image ; ?>" id="IMG_63" /> -->
         </div>
         <div id="DIV_64">
           <div id="DIV_65">

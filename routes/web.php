@@ -1,51 +1,50 @@
 <?php
 
 /*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+  |--------------------------------------------------------------------------
+  | Web Routes
+  |--------------------------------------------------------------------------
+  |
+  | Here is where you can register web routes for your application. These
+  | routes are loaded by the RouteServiceProvider within a group which
+  | contains the "web" middleware group. Now create something great!
+  |
+ */
 
 
 
 Route::get('/AddCategory', function () {
-return view('AddCategory');
+    return view('AddCategory');
 });
 Route::get('/AddBrand', function () {
-return view('AddBrand');
+    return view('AddBrand');
 });
-Route::get('/addproduct', function ()
-{
-return view('AddProduct');
+Route::get('/addproduct', function () {
+    return view('AddProduct');
 });
 Route::get('/main/{id}', 'HomeController@showProductsWithCategory');
 
-Route::post('/AddCategory','HomeController@addcategory');
+Route::post('/AddCategory', 'HomeController@addcategory');
 
-Route::post('/AddBrand','HomeController@addbrand');
+Route::post('/AddBrand', 'HomeController@addbrand');
 
-Route::get('/show','HomeController@show');
+Route::get('/show', 'HomeController@show');
 
-Route::get('/add','FlexController@add');
+Route::get('/add', 'FlexController@add');
 
-Route::get('/addflex','FlexController@addflex');
+Route::get('/addflex', 'FlexController@addflex');
 
-Route::get('cart','CartController@index');
+Route::get('cart', 'CartController@index');
 
-Route::get('cart/remove/{id}','CartController@removeitem');
+Route::get('cart/remove/{id}', 'CartController@removeitem');
 
-Route::get('cart/add/{id}','CartController@additem');
+Route::get('cart/add/{id}', 'CartController@additem');
 
-Route::get('remove',function(){
+Route::get('remove', function() {
 
-$rowId = '0f6524cc3c576d484150599b3682251c';
+    $rowId = '0f6524cc3c576d484150599b3682251c';
 
-Cart::remove($rowId);
+    Cart::remove($rowId);
 });
 
 
@@ -53,7 +52,7 @@ Cart::remove($rowId);
 Route::get('/getSubCategory/', 'HomeController@index');
 
 
-Route::post('/addproduct','HomeController@addproduct');
+Route::post('/addproduct', 'HomeController@addproduct');
 
 
 
